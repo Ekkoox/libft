@@ -7,13 +7,19 @@ char *ft_strnstr(const char *big, const char *little, size_t len)
 
     i = 0;
     j = 0;
-    while(big[i])
+    if(!little)
+        return(big);
+    while(big[i] && i < len)
     {
-        if(little[j] == big[i])
+        if(big[i] == little[j])
             j++;
-        i++;            
+        else
+            j = 0;
+        i++;
+        if(little[j] = '\0')
+            return(&big[j])
     }
-    return(little);
+    return(NULL);
 }
 
 /*#include <bsd/string.h>
