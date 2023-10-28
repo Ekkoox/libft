@@ -25,9 +25,9 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 
 int main()
 {
-	char str[] = "Je suis une licorne";
+		char str[] = "Je suis Papa";
 	unsigned int start = 8;
-	size_t len = 5;
+	size_t len = 4;
 
 	printf("%s", ft_substr(str, start, len));
 	return(0);
