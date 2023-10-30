@@ -19,13 +19,13 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 		i++;
 		start++;
 	}
-		str[i] = '\0';
+	str[i] = '\0';
 	return(str);
 }
 
 int main()
 {
-		char str[] = "Je suis Papa";
+	char str[] = "Je suis bg";
 	unsigned int start = 8;
 	size_t len = 4;
 
