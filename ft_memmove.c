@@ -30,7 +30,7 @@ void    *ft_memmove(void *dest, const void *src, size_t n)
     char str2[] = "";
     size_t n = 5;
 
-    printf("%s\n", ft_memmove(str, str2, n));
-    printf("%s", memmove(str, str2, n));
+    printf("%p\n", ft_memmove(str, str2, n));
+    printf("%p", memmove(str, str2, n));
     return(0);
 }*/

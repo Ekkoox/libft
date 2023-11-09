@@ -72,10 +72,3 @@ char **ft_split(char const *s, char c)
 	return(tab);
 }
 
-int main()
-{
-	int i;
-	char **k;
-	while()
-	return(0);
-}
