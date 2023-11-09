@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int	count_char(char *str, char c, int index)
+int	count_char(const char *str, char c, int index)
 {
 	int p;
 
@@ -32,16 +32,17 @@ int count_words(const char *str, char c)
 	return(count);
 }
 
-char *ft_strndup(const char *str, char c, int index)
+
+char *ft_strndup(const char *str, int index, int n)
 {
 	int i;
 	char *s;
 
 	i = 0;
-	s = malloc(sizeof(char) * count_char(str, c, index) + 1);
+	s = malloc(sizeof(char) * n + 1);
 	if(!s)
 		return(NULL);
-	while(str[index])
+	while(str[index] && i < n)
 	{
 		s[i] = str[index];
 		i++;
@@ -55,20 +56,82 @@ char **ft_split(char const *s, char c)
 {
 	int i;
 	int j;
+	int len;
 	char **tab;
 	
 	i = 0;
 	j = 0;
-	tab = malloc(sizeof(char) * count_words(s, c) + 1);
+	len = count_words(s, c);
+	tab = malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if(!tab)
 		return(NULL);
-	while(i < count_words(s, c))
+	while(j < len && s[i])
 	{
-		tab[i][j] = ft_strndup(s, c, i); 
+		if (s[i] != c)
+		{
+			tab[j] = ft_strndup(s, i, count_char(s, c, i));
+			while(s[i] != c && s[i])
+				i++;
+			j++;
+		}
 		i++;
-		j++;
 	}
-	tab[i] = NULL;
+	tab[j] = 0;
 	return(tab);
 }
 
+// #include <stdio.h>
+
+// void	freetab(char **tab, int i)
+// {
+// 	while (i >= 0)
+// 	{
+// 		free(tab[i]);
+// 		i--;
+// 	}
+// }
+
+// int main(int ac, char **av)
+// {
+// 	char	**splitter;
+// 	int	i;
+
+// 	i = 0;
+// 	splitter = NULL;
+// 	if (ac == 3)
+// 	{
+// 		splitter = ft_split(av[1], av[2][0]);
+// 		while (splitter[i])
+// 		{
+// 			printf("Splitter[%d] = %s\n", i, splitter[i]);
+// 			i++;
+// 		}
+// 		printf("Splitter[%d] = %s\n", i, splitter[i]);
+// 	}
+// 	freetab(splitter, i);
+// 	return (0);
+// }
+
+/*
+int main(int ac, char **av)
+{
+ //   (void)ac;
+    char **k;
+    int i = 0;
+	char *zerotest = "         Hello Motherfucking broken       split     ";
+	char zero = ' ';
+
+    //k = ft_split(av[1], av[2][0]);
+	k = ft_split(zerotest, zero);
+    while (k[i] != 0)
+    {
+        printf("%d", i);
+        printf(": ");
+        printf("%s\n", k[i]);
+        free(k[i]);
+       i++; 
+    }
+    free(k);
+    return (0);
+}
+*/

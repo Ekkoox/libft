@@ -28,11 +28,11 @@ char *ft_strjoin(char const *s1, char const *s2)
 	return(str);
 }
 
-int main()
+/*int main()
 {
 	char s1[] = "Je suis ";
 	char s2[] = "bg !";
 
 	printf("%s", ft_strjoin(s1, s2));
 	return(0);
-}
+}*/

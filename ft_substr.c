@@ -23,7 +23,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 	return(str);
 }
 
-int main()
+/*int main()
 {
 	char str[] = "Je suis bg";
 	unsigned int start = 8;
@@ -31,4 +31,4 @@ int main()
 
 	printf("%s", ft_substr(str, start, len));
 	return(0);
-}
+}*/

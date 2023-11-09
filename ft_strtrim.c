@@ -57,11 +57,11 @@ char *ft_strtrim(char const *s1, char const *set)
 }
 
 
-int main()
+/*int main()
 {
 	char str[] = "aacaboireaaca";
 	char set [] = "ac";
 
 	printf("%s", ft_strtrim(str, set));
 	return(0);
-}
+}*/

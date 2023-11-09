@@ -29,4 +29,4 @@ int main()
 	char *result = ft_strmapi(str, my_func);
 	printf("The result is %s\n", result);
 	return (0);
-}/*
+}*/

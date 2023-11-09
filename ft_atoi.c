@@ -16,7 +16,7 @@ int ft_atoi(const char *str)
         sign *= -1;
         i++;
     }
-    if(str[i] == '+')
+    else if(str[i] == '+')
 		i++;
     while(str[i] >= '0' && str[i] <= '9')
     {
@@ -25,3 +25,10 @@ int ft_atoi(const char *str)
     }
     return(res * sign);
 }
+
+/*int main()
+{
+	printf("%i\n", ft_atoi("-+48"));
+       	printf("%i", atoi("-+48"));	
+	return(0);
+}*/
