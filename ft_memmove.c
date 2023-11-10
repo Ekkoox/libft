@@ -6,31 +6,39 @@ void    *ft_memmove(void *dest, const void *src, size_t n)
 
     i = 0;
     if(dest < src)
-    {
-        while(i < n)
-        {
-            ((unsigned char*)dest)[n - 1] = ((unsigned char *)src)[n - 1];
-            n--;
-        }
-    }
-    else
-    {
+  	  {
         while(i < n)
         {
             ((unsigned char*)dest)[i] = ((unsigned char *)src)[i];
             i++;
         }
     }
+    else
+    {
+        while(n-- > 0)
+            ((unsigned char*)dest)[n] = ((unsigned char *)src)[n];
+    }
     return(dest); 
 }
 
 /*int main()
 {
-    char str[] = "La maison de mickey";
-    char str2[] = "";
-    size_t n = 5;
+        char    src[] = "lorem ipsum dolor sit amet";
+        char    *dest;
+		char *zizi;
 
-    printf("%p\n", ft_memmove(str, str2, n));
-    printf("%p", memmove(str, str2, n));
-    return(0);
+        dest = src + 3;
+		zizi = src + 3;
+        alarm(5);
+    	if (dest != ft_memmove(dest, src, 5))
+            write(1, "dest's adress was not returned\n", 31);
+        write(1, dest, 22);
+		printf("\n");
+		if (zizi != memmove(zizi, src, 5))
+            write(1, "dest's adress was not returned\n", 31);
+        write(1, dest, 22);
+        //if (src != ft_memmove(src, dest, 8))
+        //   write(1, "dest's adress was not returned\n", 31);
+        //write(1, dest, 22);
+        return (0);
 }*/

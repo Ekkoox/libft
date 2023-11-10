@@ -5,9 +5,9 @@ size_t  ft_strlcpy(char *dst, const char *src, size_t size)
     size_t i;
 
     i = 0;
-    if(size <= 0)
+    if(size == 0)
         return(ft_strlen(src));
-    while(dst[i] && src[i] && (i < (size - 1)))
+    while(src[i] && i < (size - 1))
     {
         dst[i] = src[i];
         i++;
@@ -19,11 +19,12 @@ size_t  ft_strlcpy(char *dst, const char *src, size_t size)
 /*#include <bsd/string.h>
 int main()
 {
-    char str[] = "oeoeoeo";
-    char dst[] = "je suis bg";
-    size_t size = 6;
+//   char str[] = "lorem ipsum dolor sit amet";
+	  char dst[] = "";
+	  char dest[] = "";
+//  size_t size = 15;
 
-    printf("%ld\n", ft_strlcpy(str, dst, size));
-    printf("%ld", strlcpy(str, dst, size));
+	printf("%zu\n", ft_strlcpy(dst, "lorem ipsum dolor sit amet", 15));
+	printf("%zu", strlcpy(dest, "lorem ipsum dolor sit amet", 15));
     return(0);
 }*/

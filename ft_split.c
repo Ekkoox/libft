@@ -79,36 +79,37 @@ char **ft_split(char const *s, char c)
 	tab[j] = 0;
 	return(tab);
 }
-
-// #include <stdio.h>
-
-// void	freetab(char **tab, int i)
-// {
-// 	while (i >= 0)
-// 	{
-// 		free(tab[i]);
-// 		i--;
-// 	}
-// }
+//1 14 19 25
+#include <stdio.h>
+void	freetab(char **tab, int i)
+{
+	while (i >= 0)
+	{
+		free(tab[i]);
+		i--;
+	}
+}
 
 // int main(int ac, char **av)
 // {
-// 	char	**splitter;
-// 	int	i;
-
-// 	i = 0;
-// 	splitter = NULL;
-// 	if (ac == 3)
-// 	{
-// 		splitter = ft_split(av[1], av[2][0]);
-// 		while (splitter[i])
-// 		{
-// 			printf("Splitter[%d] = %s\n", i, splitter[i]);
-// 			i++;
-// 		}
-// 		printf("Splitter[%d] = %s\n", i, splitter[i]);
-// 	}
-// 	freetab(splitter, i);
+// 	// char	**splitter;
+// 	// int	
+// 	// i = 0;
+// 	// splitter = NULL;
+// 	// if (ac == 3)
+// 	// {
+// 	// 	splitter = ft_split(av[1], av[2][0]);
+// 	// 	while (splitter[i])
+// 	// 	{
+// 	// 		printf("Splitter[%d] = %s\n", i, splitter[i]);
+// 	// 		i++;
+// 	// 	}
+// 	// 	printf("Splitter[%d] = %s\n", i, splitter[i]);
+// 	// }
+// 	// freetab(splitter, i);
+// 	// free(splitter);
+// 	(void)ac;
+// 	printf("%d", count_words(av[1], ' '));
 // 	return (0);
 // }
 

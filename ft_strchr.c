@@ -5,21 +5,25 @@ char    *ft_strchr(const char *s, int c)
     int i;
     
     i = 0;
+	if(!s)
+		return(NULL);
     while(s[i])
     {
-        if(s[i] == c)
+        if(s[i] == (unsigned char)c)
             return((char *) &s[i]);
         i++;
     }
-    return(0);
+	if(s[i] == (unsigned char)c)
+        return((char *) &s[i]);
+    return(NULL);
 }
 
 /*int main()
 {
-    char str[] = "je suis enzo!";
-    int c = 'u';
+    char str[] = "";
+    int c = '\0';
 
-    printf("%s\n", ft_strchr(str, c));
+    printf("%s", ft_strchr(str, c));
     printf("%s", strchr(str, c));
     return(0);
 }*/

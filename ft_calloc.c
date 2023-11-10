@@ -1,26 +1,30 @@
 #include "libft.h"
 
-void *ft_calloc(size_t nmemb, size_t size)
-{
-    void *tab;
 
-    if(!nmemb || !size)
-        return(0);
-    tab = malloc(nmemb * size);
-    if(!tab)
-        return(0);
-    return(tab);
+void	*ft_calloc(size_t nmemb, size_t size)
+{
+	unsigned char *tmp;
+
+	if (!nmemb || !size)
+		return (NULL);
+	if ((int)(nmemb * size) < 0)
+		return (NULL);
+	tmp = malloc(nmemb * size);
+	if (!tmp)
+		return (tmp);
+	ft_bzero(tmp, (nmemb * size));
+	return (tmp);
 }
 
-/*int	main(void)
+/*#include <limits.h>
+int	main(void)
 {
-	long long int i;
-	long long int j;
+	size_t i;
+	size_t j;
 
-	i = 2345678909089;
-	j = 2356979385093;
-	printf ("%p\n", ft_calloc(i, j));
-    printf ("%p", calloc(i, j));
+	i = 999999999999999999;
+	j = 999999999999999999;
+	printf ("%s", (char *)ft_calloc(i, j));
+	printf ("%s", (char *)calloc(i, j));
 	return (0);
 }*/
-
