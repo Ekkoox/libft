@@ -13,25 +13,26 @@ int	count_char(const char *str, char c, int index)
 	return(p);
 }
 
-
-int count_words(const char *str, char c)
+int count_words(char const *s, char c)
 {
-	int i;
-	int count;
+    int i;
+    int j;
 
-	i = 0;
-	count = 0;
-	if(str[0] != c)
-		count++;
-	while(str[i])
-	{
-		if(str[i] == c && str[i + 1] != c)
-			count++;
-		i++;
-	}
-	return(count);
+    i = 0;
+    j = 0;
+    while (s[i])
+    {
+        if (s[i] != c && s[i])
+        {
+            j++;
+            while (s[i] != c && s[i])
+                i++;
+        }
+        else
+            i++;
+    }
+    return (j);
 }
-
 
 char *ft_strndup(const char *str, int index, int n)
 {
