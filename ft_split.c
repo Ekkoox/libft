@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int	count_char(const char *str, char c, int index)
+static int	count_char(const char *str, char c, int index)
 {
 	int p;
 
@@ -13,7 +13,7 @@ int	count_char(const char *str, char c, int index)
 	return(p);
 }
 
-int count_words(char const *s, char c)
+static int count_words(char const *s, char c)
 {
     int i;
     int j;
@@ -34,7 +34,7 @@ int count_words(char const *s, char c)
     return (j);
 }
 
-char *ft_strndup(const char *str, int index, int n)
+static char *ft_strndup(const char *str, int index, int n)
 {
 	int i;
 	char *s;

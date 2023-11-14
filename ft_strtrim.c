@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int check_char(char const *str, char c)
+static int check_char(char const *str, char c)
 {
     size_t i;
 
@@ -14,7 +14,7 @@ int check_char(char const *str, char c)
     return(0);
 }
 
-int front(char const *s1, char const *set)
+static int front(char const *s1, char const *set)
 {
     int i;
 
@@ -28,7 +28,7 @@ int front(char const *s1, char const *set)
     return (0);
 }
 
-int back(char const *s1, char const *set)
+static int back(char const *s1, char const *set)
 {
     int i;
     int c;
