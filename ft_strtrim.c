@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:41:08 by enschnei          #+#    #+#             */
-/*   Updated: 2023/11/17 18:41:11 by enschnei         ###   ########.fr       */
+/*   Updated: 2023/11/20 13:22:00 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*str;
 
 	start = 0;
-	end = ft_strlen(s1);
 	i = 0;
 	if (!s1 || !set)
 		return (NULL);
+	end = ft_strlen(s1);
 	while (s1[start] && check_char(set, s1[start]))
 		start++;
 	while (end > start && check_char(set, s1[end - 1]))

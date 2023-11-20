@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:30:51 by enschnei          #+#    #+#             */
-/*   Updated: 2023/11/17 19:29:22 by enschnei         ###   ########.fr       */
+/*   Updated: 2023/11/20 16:16:37 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,20 @@ static char	*ft_strndup(const char *str, int index, int n)
 	return (s);
 }
 
+static void	*ft_free(char **strs, int count)
+{
+	int	i;
+
+	i = 0;
+	while (i < count)
+	{
+		free(strs[i]);
+		i++;
+	}
+	free(strs);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	int		i;
@@ -83,6 +97,8 @@ char	**ft_split(char const *s, char c)
 		if (s[i] != c)
 		{
 			tab[j] = ft_strndup(s, i, count_char(s, c, i));
+			if (!(tab[j]))
+				return (ft_free(tab, j));
 			while (s[i] != c && s[i])
 				i++;
 			j++;
@@ -92,6 +108,7 @@ char	**ft_split(char const *s, char c)
 	tab[j] = 0;
 	return (tab);
 }
+
 // 1 14 19 25
 // #include <stdio.h>
 
