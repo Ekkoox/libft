@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:30:51 by enschnei          #+#    #+#             */
-/*   Updated: 2023/11/20 16:16:37 by enschnei         ###   ########.fr       */
+/*   Updated: 2023/11/21 12:49:01 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,16 +83,14 @@ char	**ft_split(char const *s, char c)
 {
 	int		i;
 	int		j;
-	int		len;
 	char	**tab;
 
 	i = 0;
 	j = 0;
-	len = count_words(s, c);
 	tab = malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!tab)
 		return (NULL);
-	while (j < len && s[i])
+	while (j < count_words(s, c) && s[i])
 	{
 		if (s[i] != c)
 		{
