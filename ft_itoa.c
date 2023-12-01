@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:09:50 by enschnei          #+#    #+#             */
-/*   Updated: 2023/11/17 18:12:29 by enschnei         ###   ########.fr       */
+/*   Updated: 2023/12/01 14:04:21 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,3 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
-
-/*int main()
-{
-	printf("%s", ft_itoa(25));
-	return(0);
-}*/

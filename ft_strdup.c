@@ -32,12 +32,3 @@ char	*ft_strdup(const char *s)
 	dup[i] = '\0';
 	return (dup);
 }
-
-/*int main()
-{
-	char s1[] = "Je suis enzo !";
-
-	printf("%s\n", ft_strdup(s1));
-	printf("%s", strdup(s1));
-	return(0);
-}*/

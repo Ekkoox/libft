@@ -37,25 +37,3 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
-
-/*int main()
-{
-		char    src[] = "lorem ipsum dolor sit amet";
-		char    *dest;
-		char *zizi;
-
-		dest = src + 3;
-		zizi = src + 3;
-		alarm(5);
-		if (dest != ft_memmove(dest, src, 5))
-			write(1, "dest's adress was not returned\n", 31);
-		write(1, dest, 22);
-		printf("\n");
-		if (zizi != memmove(zizi, src, 5))
-			write(1, "dest's adress was not returned\n", 31);
-		write(1, dest, 22);
-		//if (src != ft_memmove(src, dest, 8))
-		//   write(1, "dest's adress was not returned\n", 31);
-		//write(1, dest, 22);
-		return (0);
-}*/

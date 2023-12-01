@@ -23,17 +23,3 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-
-/*#include <strings.h>
-int	main(void)
-{
-	size_t	n;
-	char str[] = "Bonjour";
-
-	n = sizeof(char) * 3;
-	ft_bzero(str, n);
-	printf("%s\n", str);
-	bzero(str, n);
-	printf("%s\n", str);
-	return (0);
-}*/

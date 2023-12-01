@@ -37,10 +37,3 @@ int	ft_atoi(const char *str)
 	}
 	return (res * sign);
 }
-
-/*int main()
-{
-	printf("%i\n", ft_atoi("-+48"));
-		printf("%i", atoi("-+48"));
-	return(0);
-}*/

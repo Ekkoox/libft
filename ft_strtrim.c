@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:41:08 by enschnei          #+#    #+#             */
-/*   Updated: 2023/11/20 13:22:00 by enschnei         ###   ########.fr       */
+/*   Updated: 2023/12/01 14:03:32 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	str[i] = 0;
 	return (str);
 }
-
-/*int main()
-{
-	char str[] = "   xxx   xxx";
-	char charset[] = " x";
-	char *zizi = ft_strtrim(str, charset);
-
-	printf("%s\n", ft_strtrim(str, charset));
-	printf("%s\n", zizi);
-	free(zizi);
-	return(0);
-}*/

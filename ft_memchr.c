@@ -30,14 +30,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (0);
 }
-
-/*int main()
-{
-	char str[] = "Je suis enzo";
-	int c = 'u';
-	size_t n = 6;
-
-	printf("%p\n", ft_memchr(str, c, n));
-	printf("%p", memchr(str, c, n));
-	return(0);
-}*/

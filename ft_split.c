@@ -6,44 +6,46 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:30:51 by enschnei          #+#    #+#             */
-/*   Updated: 2023/11/21 12:49:01 by enschnei         ###   ########.fr       */
+/*   Updated: 2023/12/01 15:49:24 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_char(const char *str, char c, int index)
+static int	count_char(const char *str, char c, int i)
 {
-	int	p;
+	int	count;
 
-	p = 0;
-	while (str[index] && str[index] != c)
+	count = 0;
+	while (str[i] && str[i] != c)
 	{
-		p++;
-		index++;
+		i++;
+		count++;
 	}
-	return (p);
+	return (count);
 }
 
-static int	count_words(char const *s, char c)
+static int	count_words(const char *s, char c)
 {
 	int	i;
-	int	j;
+	int	count;
 
 	i = 0;
-	j = 0;
+	count = 0;
+	if (!s)
+		return (0);
 	while (s[i])
 	{
 		if (s[i] != c && s[i])
 		{
-			j++;
+			count++;
 			while (s[i] != c && s[i])
 				i++;
 		}
 		else
 			i++;
 	}
-	return (j);
+	return (count);
 }
 
 static char	*ft_strndup(const char *str, int index, int n)
@@ -88,8 +90,8 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	j = 0;
 	tab = malloc(sizeof(char *) * (count_words(s, c) + 1));
-	if (!tab)
-		return (NULL);
+	if (!tab || !s)
+		return (free(tab), NULL);
 	while (j < count_words(s, c) && s[i])
 	{
 		if (s[i] != c)
@@ -106,65 +108,3 @@ char	**ft_split(char const *s, char c)
 	tab[j] = 0;
 	return (tab);
 }
-
-// 1 14 19 25
-// #include <stdio.h>
-
-// void	freetab(char **tab, int i)
-// {
-// 	while (i >= 0)
-// 	{
-// 		free(tab[i]);
-// 		i--;
-// 	}
-// }
-
-// int main(int ac, char **av)
-// {
-// 	// char	**splitter;
-// 	// int
-// 	// i = 0;
-// 	// splitter = NULL;
-// 	// if (ac == 3)
-// 	// {
-// 	// 	splitter = ft_split(av[1], av[2][0]);
-// 	// 	while (splitter[i])
-// 	// 	{
-// 	// 		printf("Splitter[%d] = %s\n", i, splitter[i]);
-// 	// 		i++;
-// 	// 	}
-// 	// 	printf("Splitter[%d] = %s\n", i, splitter[i]);
-// 	// }
-// 	// freetab(splitter, i);
-// 	// free(splitter);
-// 	(void)ac;
-// 	printf("%d", count_words(av[1], ' '));
-// 	return (0);
-// }
-
-/*
-int	main(int ac, char **av)
-{
-	char	**k;
-	int		i;
-	char	*zerotest;
-	char	zero;
-
- //   (void)ac;
-	i = 0;
-	zerotest = "         Hello Motherfucking broken       split     ";
-	zero = ' ';
-	//k = ft_split(av[1], av[2][0]);
-	k = ft_split(zerotest, zero);
-	while (k[i] != 0)
-	{
-		printf("%d", i);
-		printf(": ");
-		printf("%s\n", k[i]);
-		free(k[i]);
-		i++;
-	}
-	free(k);
-	return (0);
-}
-*/

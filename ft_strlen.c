@@ -24,9 +24,3 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-
-/*int main()
-{
-	printf("%ld", ft_strlen("on est la"));
-	return(0);
-}*/

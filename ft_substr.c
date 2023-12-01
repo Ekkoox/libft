@@ -22,6 +22,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	slen;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	slen = ft_strlen(s);
 	if (start > slen)
 		start = slen;
@@ -39,25 +41,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[i] = '\0';
 	return (str);
 }
-
-/*#include <stdio.h>
-#include <stdlib.h>
-
-
-int	main(int ac, char **av)
-{
-	(void)ac;
-	char	*str;
-
-	str = ft_substr(av[1], atoi(av[2]), atoi(av[3]));
-	if (!str)
-	{
-		printf("ERROR");
-		return (-1);
-	}
-	else
-	{
-		printf("str = %s\n", str);
-	}
-	return(0);
-}*/

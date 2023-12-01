@@ -21,13 +21,3 @@ int	ft_isalpha(int c)
 		return (1);
 	return (0);
 }
-
-/*#include <ctype.h>
-int	main(void)
-{
-		int c = 'T';
-
-	printf("%d, ca marche\n", ft_isalpha(c));
-	printf("%d, ca marche aussi", isalpha(c));
-	return(0);
-}*/

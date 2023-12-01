@@ -6,7 +6,7 @@
 /*   By: enschnei <enschnei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 18:38:35 by enschnei          #+#    #+#             */
-/*   Updated: 2023/11/17 18:38:42 by enschnei         ###   ########.fr       */
+/*   Updated: 2023/12/01 16:06:33 by enschnei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*str;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	str = ft_strdup(s);
 	if (!str)
 		return (NULL);
@@ -28,9 +30,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	}
 	return (str);
 }
-
-/*int main()
-{
-	char str[10] = "hello.";
-	return (0);
-}*/
